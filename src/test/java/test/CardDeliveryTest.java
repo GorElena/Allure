@@ -6,7 +6,9 @@ import data.DataGenerator;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Keys;
+
 import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class CardDeliveryTest {
@@ -14,14 +16,17 @@ public class CardDeliveryTest {
     public void setUp() {
         open("http://localhost:9999");
     }
+
     @BeforeAll
     public static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
+
     @AfterAll
     public static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
+
     @Test
     @DisplayName("Should successful plan and replan meeting")
     public void shouldSuccessfulPlanAndReplanMeeting() {
